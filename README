@@ -1,0 +1,38 @@
+rina.karnauch
+
+
+
+=============================
+=      File description     =
+=============================
+Library.java - contains the library implementation, which represents a system of library with Books and
+registered Patrons, both are objects implemented by the following descreption.
+Patron.java - implements the Patron class.
+Book.java - implement the Book class.
+
+
+
+=============================
+=          Design           =
+=============================
+I implemented the Book and Patron class in such a way that it can be used by several Library, meanings that
+each object has it's fields and can support existing in several libraries at the same time- not bounding a
+library information to the book's or patron's informatoion.
+The library class is implemented in such a way that at any time we are holding information about the
+registered patons and the books- avaliable or not.
+I chose this design because it is similar to how tools act like in the real world:
+each patron can chose several libraries to borrow from, and though we can't have the same book in different
+libraries at the same time, but we'd like to separate the implementation so they could "exist" with no
+dependencies- because there are book which are in stores and not in libraries, for example.
+
+
+
+=============================
+=  Implementation details   =
+=============================
+In the Library class, in order to store the books, and the patrons i chose the array data base so each object
+registered to the class has a record in it. In addition we also have an array of borrowed book per patronID
+arrray, which holds the amount of books borrowed by each patron according to his ID.
+The array choice was made due to the information about each library capcity for each field that we recieve
+while constructing a library object, so we know exactly how much data we need in our base- and can hold it
+inside an array- who's size is  determined at it's construction time.
